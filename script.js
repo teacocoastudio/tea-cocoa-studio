@@ -145,13 +145,10 @@
     document.querySelectorAll('.project-visual').forEach((card) => bindPointerDepth(card, 'card', card.closest('.project-card') || card));
   }
 
-  // Formspree setup: create a form in your account and paste its endpoint here.
-  // Leave empty until a real endpoint has been created and verified.
-  // Formspree setup: create a form in your account and paste its endpoint here.
-  // Leave empty until a real endpoint has been created and verified.
-  const FORMSPREE_ENDPOINT = '';
-  // Public Turnstile Site Key only. Keep the matching Secret Key in Formspree settings.
-  const TURNSTILE_SITE_KEY = '';
+  // Formspree verifies the Turnstile response server-side using its securely stored Secret Key.
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgaoypka';
+  // Public Turnstile Site Key only; the Secret Key must stay in Formspree settings.
+  const TURNSTILE_SITE_KEY = '0x4AAAAAAFTcEYhbR70u678o';
   const inquiryForm = document.querySelector('#inquiry-form');
 
   if (inquiryForm) {
@@ -185,7 +182,10 @@
     let submitting = false;
 
     const updateSubmitState = () => {
-      if (submitButton) submitButton.disabled = !securityIsConfigured || !turnstileToken || submitting;
+      if (submitButton) {
+        const formIsValid = inquiryForm.checkValidity();
+        submitButton.disabled = !securityIsConfigured || !formIsValid || !turnstileToken || submitting;
+      }
     };
     updateSubmitState();
     if (setupNote) setupNote.hidden = securityIsConfigured;
@@ -354,8 +354,14 @@
     inquiryForm.querySelectorAll('[data-back]').forEach((button) => {
       button.addEventListener('click', () => showStep(currentStep - 1));
     });
-    inquiryForm.addEventListener('input', summarize);
-    inquiryForm.addEventListener('change', summarize);
+    inquiryForm.addEventListener('input', () => {
+      summarize();
+      updateSubmitState();
+    });
+    inquiryForm.addEventListener('change', () => {
+      summarize();
+      updateSubmitState();
+    });
 
     inquiryForm.addEventListener('submit', async (event) => {
       event.preventDefault();
