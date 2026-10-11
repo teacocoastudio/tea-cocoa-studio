@@ -1163,3 +1163,11 @@ html[data-theme="dark"] .project-card-fieldnotes .fieldnotes-capabilities li { c
   .project-card-fieldnotes .live-demo-cta { top: 12px; right: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { .fieldnotes-preview,.fieldnotes-capabilities li { transition-duration: .01ms; } }
+/* A transparent, fixed fluid layer overlays the existing page colors as the site background. */
+.fluid-canvas { position: fixed; z-index: 10; inset: 0; display: block; width: 100vw; height: 100vh; opacity: 0; pointer-events: none; transition: opacity 700ms ease; }
+.fluid-canvas.is-fluid-ready { opacity: .25; }
+body.is-fluid-ready .hero-art::before,
+body.is-fluid-ready .hero-art::after { opacity: 0; }
+body.is-fluid-ready .hero-art { z-index: 11; }
+@media (max-width: 640px) { .fluid-canvas.is-fluid-ready { opacity: .18; } }
+@media (prefers-reduced-motion: reduce) { .fluid-canvas { display: none; transition: none; } }
