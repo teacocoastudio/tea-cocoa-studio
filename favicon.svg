@@ -1,5 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <rect width="48" height="48" rx="24" fill="#543b2e"/>
-  <path d="M25 9c-2 12-10 17-10 22a9 9 0 0 0 18 0c0-5-8-10-8-22Z" fill="none" stroke="#f5f0e7" stroke-width="1.5"/>
-  <path d="M24 38V21" stroke="#f5f0e7" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500" viewBox="0 0 1500 1500">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2b4d59"/><stop offset="1" stop-color="#202b44"/></linearGradient>
+<linearGradient id="leaf" x1="0" y1="0" x2="0.95" y2="1"><stop stop-color="#a6ed9c"/><stop offset=".46" stop-color="#45c7a1"/><stop offset="1" stop-color="#198a98"/></linearGradient>
+<linearGradient id="bean" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0b467"/><stop offset="1" stop-color="#ac603e"/></linearGradient>
+<linearGradient id="swoosh" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#3de58e"/><stop offset="1" stop-color="#79efcb"/></linearGradient>
+</defs>
+<circle cx="750" cy="750" r="750" fill="url(#bg)"/>
+<g transform="translate(750 750) scale(2.272806324) translate(-519.834289550781 -294.844177246094)">
+<g id="group-13" transform="translate(418.5 272) rotate(0) scale(1.0 1.0)">
+<path d="M 54.5000 183.0000 C -48.5000 151.0000 -133.5000 86.0000 -119.5000 -34.0000 C -113.5000 -93.0000 -74.5000 -149.0000 -35.5000 -183.0000 C -53.5000 -115.0000 -11.5000 -93.0000 36.5000 -69.0000 C 127.5000 -23.0000 133.5000 95.0000 54.5000 183.0000 Z" fill="url(#leaf)" fill-opacity="1.0000"/>
+</g>
+<g id="group-12" transform="translate(422 300) rotate(0) scale(1.0 1.0)">
+<path d="M 51.0000 155.0000 C -21.0000 50.0000 -51.0000 -47.0000 -39.0000 -155.0000" fill="none" stroke="#d5f5ba" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="group-11" transform="translate(384.5 326.5) rotate(0) scale(1.0 1.0)">
+<path d="M 22.8476 4.7773 C -9.1524 -35.2227 -49.0235 -50.3515 -80.0235 -57.3515" fill="none" stroke="#d4f5c1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 47.2929 59.0742 C 6.2929 35.0742 -29.4102 26.2031 -56.4102 24.2031" fill="none" stroke="#d4f5c1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="group-10" transform="translate(637.5 335.5) rotate(0) scale(1.0 1.0)">
+<path d="M -112.5000 118.5000 C -142.5000 50.5000 -116.5000 -46.5000 -42.5000 -98.5000 C 8.5000 -135.5000 81.5000 -130.5000 115.5000 -93.5000 C 142.5000 -31.5000 117.5000 52.5000 47.5000 95.5000 C -3.5000 126.5000 -72.5000 135.5000 -112.5000 118.5000 Z" fill="url(#bean)" fill-opacity="1.0000"/>
+</g>
+<g id="group-9" transform="translate(641.5 358.5) rotate(0) scale(1.0 1.0)">
+<path d="M -107.5000 85.5000 C -48.5000 54.5000 -31.5000 -17.5000 31.5000 -62.5000 C 60.5000 -83.5000 87.5000 -97.5000 107.5000 -107.5000 C 61.5000 -45.5000 62.5000 15.5000 10.5000 62.5000 C -31.5000 98.5000 -78.5000 107.5000 -107.5000 85.5000 Z" fill="#241e22" fill-opacity="0.7804"/>
+</g>
+<g id="group-8" transform="translate(634.5 353) rotate(0) scale(1.0 1.0)">
+<path d="M -98.6728 90.1605 C -24.5247 46.8025 -37.9568 -29.0494 111.3148 -100.4321" fill="none" stroke="#f8c779" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="group-7" transform="translate(537 451.5) rotate(0) scale(1.0 1.0)">
+<path d="M -233.0307 8.0804 C -254.1859 16.8184 -265.2234 -19.0535 -231.3443 -25.9047 C -176.1674 -37.0628 -114.0000 23.5000 -32.0000 34.5000 C 54.0000 45.5000 147.0000 23.5000 218.0000 -45.5000" fill="none" stroke="url(#swoosh)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="group-5" transform="translate(747 186) rotate(0) scale(1.0 1.0)">
+<path d="M -204.8835 -6.8875 C -199.5501 14.4458 -186.2168 27.7792 -164.8835 33.1125 C -186.2168 38.4458 -199.5501 51.7792 -204.8835 73.1125 C -210.2168 51.7792 -223.5501 38.4458 -244.8835 33.1125 C -223.5501 27.7792 -210.2168 14.4458 -204.8835 -6.8875 Z" fill="#ffe6a0" fill-opacity="1.0000"/>
+</g>
+</g>
 </svg>

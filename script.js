@@ -28,7 +28,7 @@
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 
-  const revealTargets = document.querySelectorAll('.project-card, .service-row, .about-mark, .about-copy, .contact-left');
+  const revealTargets = document.querySelectorAll('.project-card, .service-row, .contact-left');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver((entries, currentObserver) => {
       entries.forEach((entry) => {
