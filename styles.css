@@ -596,7 +596,7 @@ body {
 
 /* Theme controls: the dark palette applies to interface neutrals only. */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --theme-bg: #f5f0e7;
   --theme-surface: #fbf8f1;
   --theme-text: #34271f;

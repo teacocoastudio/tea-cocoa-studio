@@ -1,31 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f0e7">
+  <meta name="theme-color" content="#182832">
   <meta name="description" content="Tea Cocoa Studio is an independent creative studio crafting thoughtful websites, interactive experiences and tools for creative workflows.">
   <title>Tea Cocoa Studio — Thoughtful digital craft</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <script>
-    (() => {
-      let theme = 'light';
-      try {
-        const savedTheme = localStorage.getItem('tcs-theme');
-        if (savedTheme === 'light' || savedTheme === 'dark') {
-          theme = savedTheme;
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          theme = 'dark';
-        }
-      } catch {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
-      }
-      document.documentElement.dataset.theme = theme;
-      const themeColor = document.querySelector('meta[name="theme-color"]');
-      if (themeColor) themeColor.content = theme === 'dark' ? '#182832' : '#f5f0e7';
-    })();
-  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
@@ -48,10 +31,7 @@
       <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a>
       <a class="nav-contact" href="#project-inquiry">Start a Project <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
     </nav>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch to dark theme">
-      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15.7A8.4 8.4 0 0 1 8.3 3.8 8.5 8.5 0 1 0 20.2 15.7Z"/></svg>
-      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-    </button>
+
   </header>
 
   <main id="main">

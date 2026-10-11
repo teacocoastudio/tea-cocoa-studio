@@ -82,7 +82,7 @@ function createFluidScene(THREE, hero, canvas) {
   let targetPressure = 0;
   let pressure = 0;
   let waveEnergy = 0;
-  let darkMode = document.documentElement.dataset.theme === 'dark' ? 1 : 0;
+  const darkMode = 1;
 
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 5);
@@ -367,10 +367,6 @@ function createFluidScene(THREE, hero, canvas) {
   };
   document.addEventListener('visibilitychange', onVisibilityChange);
 
-  const themeObserver = new MutationObserver(() => {
-    darkMode = document.documentElement.dataset.theme === 'dark' ? 1 : 0;
-  });
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
   const onContextLost = (event) => {
     event.preventDefault();
@@ -420,7 +416,6 @@ function createFluidScene(THREE, hero, canvas) {
     cleanedUp = true;
     renderer.setAnimationLoop(null);
     intersectionObserver.disconnect();
-    themeObserver.disconnect();
     document.removeEventListener('visibilitychange', onVisibilityChange);
     window.removeEventListener('resize', resize);
     window.removeEventListener('scroll', updateScrollPosition);

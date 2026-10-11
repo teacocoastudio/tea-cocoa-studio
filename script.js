@@ -1,38 +1,4 @@
 (() => {
-  const themeToggle = document.querySelector('#theme-toggle');
-  const themeMeta = document.querySelector('meta[name="theme-color"]');
-  const root = document.documentElement;
-
-  const applyTheme = (theme, saveChoice = false) => {
-    const isDark = theme === 'dark';
-    root.dataset.theme = isDark ? 'dark' : 'light';
-
-    if (themeToggle) {
-      const nextTheme = isDark ? 'light' : 'dark';
-      const label = 'Switch to ' + nextTheme + ' theme';
-      themeToggle.setAttribute('aria-label', label);
-      themeToggle.setAttribute('aria-pressed', String(isDark));
-      themeToggle.setAttribute('title', label);
-    }
-
-    if (themeMeta) themeMeta.setAttribute('content', isDark ? '#182832' : '#f5f0e7');
-
-    if (saveChoice) {
-      try {
-        localStorage.setItem('tcs-theme', isDark ? 'dark' : 'light');
-      } catch {
-        // The theme still works if storage is unavailable.
-      }
-    }
-  };
-
-  applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true);
-    });
-  }
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#primary-navigation');
 
@@ -207,7 +173,7 @@
       try {
         turnstileWidgetId = window.turnstile.render('#turnstile-container', {
           sitekey: TURNSTILE_SITE_KEY.trim(),
-          theme: root.dataset.theme === 'dark' ? 'dark' : 'light',
+          theme: 'dark',
           size: window.matchMedia('(max-width: 420px)').matches ? 'compact' : 'flexible',
           execution: 'render',
           appearance: 'always',
@@ -279,17 +245,6 @@
       });
     }
 
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        if (!window.turnstile || turnstileWidgetId === null || formShell.hidden) return;
-        turnstileToken = '';
-        window.turnstile.remove(turnstileWidgetId);
-        turnstileWidgetId = null;
-        setTurnstileStatus('Updating the security check…');
-        updateSubmitState();
-        if (currentStep === 2) renderTurnstile();
-      });
-    }
     const validateStep = (step) => {
       if (step === 0 && !inquiryForm.querySelector('input[name="service"]:checked')) {
         setMessage('Choose a service to continue.');
